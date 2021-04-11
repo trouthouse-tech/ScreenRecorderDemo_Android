@@ -8,6 +8,9 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
+import com.hbisoft.hbrecorder.HBRecorder;
+import com.hbisoft.hbrecorder.HBRecorderListener;
+
 public class ScreenRecorderModule extends ReactContextBaseJavaModule {
 
     ScreenRecorderModule(ReactApplicationContext context) {
@@ -23,5 +26,23 @@ public class ScreenRecorderModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void startRecordingScreen(String name){
         Log.d("ScreenRecorderModule", "Start Recording screen called with:" + name + ".");
+    }
+}
+
+class ScreenRecorder implements HBRecorderListener {
+
+    @Override
+    public void HBRecorderOnStart() {
+
+    }
+
+    @Override
+    public void HBRecorderOnComplete() {
+
+    }
+
+    @Override
+    public void HBRecorderOnError(int errorCode, String reason) {
+
     }
 }
